@@ -4,35 +4,51 @@ const Home = require('./Home')
 
 class ClientsTest{
     constructor(){
-        this.selenium = new BasePage().selenium
-        this.clients = new Clients(this.selenium)
-        this.home = new Home(this.selenium)
+        this.basePage = new BasePage()
+        this.selenium = this.basePage.selenium
+        this.logger = this.basePage.logger
+        this.clients = new Clients(this.selenium , this.logger)
+        this.home = new Home(this.selenium , this.logger)
     }
 
     //** Main method - run all the test cases **/
     //** Before statring , add a client called 'Dor Shriki'*/
     async runTest(){
+        this.logger.info(`Start testing 'Clients page'`)
         await this.home.navigateToHomePage() // Open LH's CRM Website
         await this.home.clickOn('Clients') // Nevigate to clients page
         await this.searchClient('dor shriki' , 'name') // Functinal test
         await this.editClient('dor shriki' , 'name' , 'Ness Client' , 'name') // Functional test
         await this.deleteClient('Ness Client' , 'name') // Functional test
         await this.selenium.close() // Close browser
+        this.logger.info(`Finish testing 'Clients page'`)
     }
 
     // Fanctional test - search and validate client exist
     async searchClient(input , searchBy){
-        await this.clients.searchClient(input , searchBy)
+        this.logger.info(`Start (Functional Test) - 'Search Client' function`)
+        if(await this.clients.searchClient(input , searchBy)){
+            return this.logger.info(`End - 'Search client' function is working!`)
+        }
+        return this.logger.error(`End - 'Search Client' function is not working!`)
     }
 
     // Functional test - edit client and validate changes
     async editClient(input , searchBy , newInput , editBy){
-        await this.clients.editClient(input , searchBy , newInput , editBy)
+        this.logger.info(`Start (Functional Test) - 'Edit client' function`)
+        if(await this.clients.editClient(input , searchBy , newInput , editBy)){
+            return this.logger.info(`End - 'Edit Client' function is working!`)
+        }
+        return this.logger.error(`End - 'Edit Client' function is not working!`)
     }
 
     // Functional test - delete client and validate client is not exist anymore
     async deleteClient(input , searchBy){
-        await this.clients.deleteClient(input,searchBy)
+        this.logger.info(`Start (Functional Test) - 'Delete client' function`)
+        if(await this.clients.deleteClient(input,searchBy)){
+            return this.logger.info(`End - 'Delete Client' function is working!`)
+        }
+        return this.logger.error(`End - 'Delete Client' function is not working!`)
     }
 }
 
