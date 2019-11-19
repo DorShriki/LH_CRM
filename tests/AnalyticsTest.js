@@ -1,7 +1,7 @@
-const BasePage = require('./BasePage')
-const Analytics = require('./Analytics')
-const Home = require('./Home')
-const Actions = require('./Actions')
+const BasePage = require('../BasePage')
+const Analytics = require('../pages/Analytics')
+const Home = require('../pages/Home')
+const Actions = require('../pages/Actions')
 
 class AnalyticsTest{
     constructor(){

@@ -1,6 +1,6 @@
-const BasePage = require('./BasePage')
-const Clients = require('./Clients')
-const Home = require('./Home')
+const BasePage = require('../BasePage')
+const Clients = require('../pages/Clients')
+const Home = require('../pages/Home')
 
 class ClientsTest{
     constructor(){

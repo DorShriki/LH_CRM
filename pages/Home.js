@@ -1,6 +1,7 @@
 class Home {
-    constructor(selenium) {
-	    this.selenium = selenium
+    constructor(selenium , logger) {
+        this.selenium = selenium
+        this.logger = logger
 	}
 
     async navigateToHomePage() {

@@ -17,7 +17,7 @@ class Logger{
 
         this.logger = createLogger({
         // change level if in dev environment versus production
-        level: this.env === 'development' ? 'debug' : 'info',
+        level: this.env === 'development' ? 'info' : 'error',
         format: format.combine(
             format.timestamp({
             format: 'YYYY-MM-DD HH:mm:ss'
@@ -26,7 +26,7 @@ class Logger{
         ),
         transports: [
             new transports.Console({
-            level: 'silly',
+            level: 'info',
             format: format.combine(
                 format.colorize(),
                 format.printf(

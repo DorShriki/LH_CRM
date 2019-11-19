@@ -1,0 +1,22 @@
+2019-11-09 13:56:20 info: Start testing 'Analytics page'
+2019-11-09 13:56:44 info: Start (Functional test) - 'Email sent' function
+2019-11-09 13:56:44 info: Get number of 'Email Sent'
+2019-11-09 13:56:46 info: Start 'updateClient' function with values: Dor Shriki , null , B , undefined
+2019-11-09 13:56:49 info: Insert email type: 'B'
+2019-11-09 13:56:49 info: Popup alert: 'UPDATE SUCCESSFUL'
+2019-11-09 13:56:49 info: End - 'updateClient' function with values: Dor Shriki , null , B , undefined
+2019-11-09 13:56:51 info: Get number of 'Email Sent'
+2019-11-09 13:56:51 info: End - 'Email sent' function is working!
+2019-11-09 13:56:51 info: Start (Functional Test) - 'Outstanding clients' function
+2019-11-09 13:56:51 info: Get number of 'Outstanding Clients'
+2019-11-09 13:56:54 info: Start 'updateClient' function with values: Dor Shriki , null , null , true
+2019-11-09 13:56:56 info: Sold is: 'true'
+2019-11-09 13:56:56 info: Popup alert: 'UPDATE SUCCESSFUL'
+2019-11-09 13:56:56 info: End - 'updateClient' function with values: Dor Shriki , null , null , true
+2019-11-09 13:56:58 info: Get number of 'Outstanding Clients'
+2019-11-09 13:56:58 info: End - 'Outstanding client' function is work!
+2019-11-09 13:56:58 info: Start (Functional Test) - 'Hottest country' function
+2019-11-09 13:56:58 info: Start 'hottestCountry' function
+2019-11-09 13:57:36 info: End 'hottestCountry' function - 'France' is the Hottest country!
+2019-11-09 13:57:36 info: End - 'Hottest country' is working
+2019-11-09 13:57:36 info: Finish testing 'Analytics page'

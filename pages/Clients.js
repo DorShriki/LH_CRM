@@ -61,6 +61,7 @@ class Clients {
         await this.selenium.write(newInput , 'id' , `${editBy}`) 
         await this.selenium.clickElement('className' , 'update-client-popup-btn')
         await this.selenium.clickElement('className' , 'cancel-client-popup-btn') 
+        this.logger.info("Clicked on 'edit'")
         await this.selenium.clearElementField('tagName' , 'input' , null , searchElement) 
         const isEdit = await this.searchClient(newInput , editBy) 
         if(isEdit){
@@ -79,14 +80,15 @@ class Clients {
         await this.selenium.clickElement('className' , 'clientDetails') 
         await this.selenium.clickElement('className' , 'delete-client-popup-btn')
         await this.selenium.clickElement('className' , 'cancel-client-popup-btn')
+        this.logger.info("Clicked on 'delete'")
         await this.selenium.clearElementField('tagName' , 'input' , null , searchElement)
-        const  isExist = await this.searchClient(input , searchBy)
+        const isExist = await this.searchClient(input , searchBy)
         if(!isExist){
             this.logger.info(`End 'deleteClient' function - Client with value '${input}' By '${searchBy}' is deleted`)
             await this.selenium.clearElementField('tagName' , 'input' , null , searchElement) 
             return true
         }
-        this.logger.error(`End 'deleteClient' function - Cannot delete client with value '${input}' By '${searchBy}' is deleted`)
+        this.logger.error(`End 'deleteClient' function - Cannot delete client with value '${input}' By '${searchBy}'`)
         await this.selenium.clearElementField('tagName' , 'input' , null , searchElement) 
         return false
     }

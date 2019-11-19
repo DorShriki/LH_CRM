@@ -52,7 +52,7 @@ class Actions {
 
         const error = await this.selenium.findElementBy('className' , 'error-pop-up') // get error WebElement popup
         if(error){
-            this.logger.info(`Popup alert: 'SOME DETAILS ARE MISSING'`)
+            this.logger.error(`Popup alert: 'SOME DETAILS ARE MISSING'`)
             return false
         }
         this.logger.error(`Popup didn't appeared.`) // if both success and error popup didn't appered return error
